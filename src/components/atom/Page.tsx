@@ -9,7 +9,7 @@ export const Page: FC<Props> = ({ className = "", ...props }) => {
   return (
     <div
       className={twMerge(
-        "bg-gradient-to-t from-primary via-primary/60 to-white min-h-screen flex flex-col items-center py-8 px-4",
+        "bg-gradient-to-tr from-primary via-primary/60 to-white min-h-screen flex flex-col items-center py-8 px-4",
         className
       )}
       {...props}
