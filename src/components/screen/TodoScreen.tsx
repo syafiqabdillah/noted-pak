@@ -13,7 +13,7 @@ type Todo = {
   done: boolean;
 };
 
-const Todo = () => {
+const TodoScreen = () => {
   const [username, setUsername] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
   const [currentlyEditedTodo, setCurrentlyEditedTodo] = useState<Todo | null>(
@@ -24,7 +24,7 @@ const Todo = () => {
 
   const logout = () => {
     removeCookie("username");
-    navigate("/");
+    navigate("/login");
   };
 
   const addTodo = (text: string) => {
@@ -66,13 +66,13 @@ const Todo = () => {
     if (storedUsername) {
       setUsername(storedUsername);
     } else {
-      navigate("/");
+      navigate("/login");
     }
   }, []);
 
   return (
     <Page>
-      <h1 className='uppercase font-bold text-5xl mb-8'>
+      <h1 className='uppercase font-bold text-3xl mb-8'>
         noted, <span className='text-primary/50'>{username}</span>
       </h1>
       <FiLogOut
@@ -102,10 +102,10 @@ const Todo = () => {
           </Card>
         ))}
       </div>
-      <div className='fixed bottom-4 px-4 w-full max-w-xl bg-white/50 glass rounded-lg min-h-[40px] p-3 flex gap-4'>
+      <div className='fixed bottom-4 left-4 right-4 flex gap-4 debug lg:max-w-xl xl:left-1/2 xl:-translate-x-1/2 xl:right-0'>
         <input
           ref={inputRef}
-          className='outline-none border-none w-full debug'
+          className='outline-none border-none w-full debug min-h-[40px] rounded-lg bg-white/50 px-3'
           spellCheck='false'
           onKeyUp={(e) => {
             if (e.key === "Enter") {
@@ -145,4 +145,4 @@ const Todo = () => {
   );
 };
 
-export default Todo;
+export default TodoScreen;
