@@ -81,6 +81,7 @@ const Login: FC<Props> = ({ isRegister }) => {
               }}
             />
             <Input
+              id='password'
               type='password'
               placeholder='Password'
               value={password}
@@ -93,6 +94,7 @@ const Login: FC<Props> = ({ isRegister }) => {
             />
             {isRegister && (
               <Input
+                id='confirm-password'
                 type='password'
                 placeholder='Confirm Password'
                 value={confirmPassword}
